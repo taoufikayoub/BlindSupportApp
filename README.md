@@ -33,7 +33,7 @@
 <h3 align="center">Blind Support Project</h3>
 
   <p align="center">
-    A project that helps blind people in their daily life using ESP32-CAM, Mobile 
+    Smart that helps blind people in their daily life using machine learning and a mobile app.
     <br />
     <a href="https://github.com/taoufikayoub/BlindSupportApp"><strong>Explore the docs »</strong></a>
     <br />
@@ -78,7 +78,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `taoufikayoub`, `BlindSupportApp`, `ayoub107p5`, `taoufik-ayoub`, `ensam-casa.ma`, `taoufik.ayoub`, `Blind Support Project`, `A project that helps blind people in their daily life using machine learning, mobile app and ESP32-CAM glasses`
+A Product that helps blind people in their daily life using machine learning, mobile app and ESP32-CAM glasses
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -98,69 +98,83 @@ This is how you can recreate this project on your local machine.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+- An ESP32-CAM with Webserver Installed connected to your local WIFI
 
-- Expo CLI
+- Expo CLI Installed on your machine
 
   ```sh
   npm install expo-cli@latest -g
   ```
 
-- ESP32-CAM with WEBSERVER Installed connected to your local WIFI
+## How to Install the ML server and Run it with `Python`
 
-### Installation
+You need to install python v3 or a higher version to run this project on your machine.
 
-1. Clone the repo
+Clone the repository and `cd` to the server folder, open your terminal and type the following commands:
 
-   ```sh
-   git clone https://github.com/taoufikayoub/BlindSupportApp.git
-   ```
+- Clone the repo and enter the project directory
 
-2. Enter the project directory
-   ```sh
-   git clone https://github.com/taoufikayoub/BlindSupportApp.git
-   ```
+  ```sh
+  git clone https://github.com/taoufikayoub/BlindSupportApp.git
+  cd BlindSupportApp
+  ```
 
-- Mobile App Installation
+- Create a virtual environment:
 
-3. Enter mobile project folder
+  ```sh
+  python -m venv venv
+  ```
 
-   ```sh
-   cd mobile
-   ```
+- Activate the virtual environment:
 
-4. Install NPM packages
+  ```sh
+  ./venv/Scripts/activate
+  ```
 
-   ```sh
-   expo install
-   ```
+- Install dependencies:
 
-5. Enter your routes in `config.ts`
+  ```sh
+  pip install -r ./requirements.txt
+  ```
 
-   ```js
-   export const ESP32_CAM_URI = "ENTER YOUR ESP32-CAM IP ADDRESS"; // You will get it from the ESP32-CAM Serial on loading
-   export const SERVER_URI = "ENTER THE FLASK SERVER ADDRESS HERE"; // You will get it from the FLASK server debug messages on Loading too
-   ```
+- Run the project:
 
-6. Run the app (check if you are unfamiliar with expo)
+  ```sh
+  flask run
+  ```
+
+## How to Run the mobile App with `Expo`
+
+You need to install Expo on your machine.
+
+Open a new terminal, and type the following commands:
+
+- Enter mobile project folder
+
+  ```sh
+  cd mobile
+  ```
+
+- Install NPM packages
+
+  ```sh
+  expo install
+  ```
+
+- Enter your routes in `config.ts`
+
+  ```js
+  export const ESP32_CAM_URI = "ENTER YOUR ESP32-CAM IP ADDRESS"; // You will get it from the ESP32-CAM Serial on loading
+  export const SERVER_URI = "ENTER THE FLASK SERVER ADDRESS HERE"; // You will get it from the FLASK server debug messages on Loading too
+  ```
+
+- Run the app
 
 ```sh
  expo install
 ```
 
-- Server Installation
-
-7. cd server
-
-8. pip install virtualenv (if you don't already have virtualenv installed)
-
-9. virtualenv venv
-
-10. ./venv/Scripts/activate
-
-11. pip install -r requirements.txt
-
-12. flask run
+- Install Expo Go on your android or iOS device to run it there
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -168,9 +182,11 @@ This is an example of how to list things you need to use the software and how to
 
 ## Usage
 
-- First Tab: Recognizing Faces
+- Wear the smart glasses
 
-- Second Tab: Add known faces to the server
+- Use your phone to recognize the people in front of you
+
+- You can add the name of the people to the server to recognize them later
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -196,26 +212,6 @@ Don't forget to give the project a star! Thanks again!
 ## License
 
 Distributed under the MIT License.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- CONTACT -->
-
-## Contact
-
-Ayoub Taoufik - [@ayoub107p5](https://twitter.com/ayoub107p5) - taoufik.ayoub@ensam-casa.ma
-
-Project Link: [https://github.com/taoufikayoub/BlindSupportApp](https://github.com/taoufikayoub/BlindSupportApp)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-- []()
-- []()
-- []()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
