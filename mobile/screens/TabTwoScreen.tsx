@@ -4,52 +4,38 @@ import { Image, StyleSheet, TouchableHighlight, TextInput } from "react-native";
 import { Text, View } from "../components/Themed";
 import { RootTabScreenProps } from "../types";
 
-import axios from "axios";
+import { captureImage } from "../utils/esp32";
+import { saveFaceAPI } from "../utils/api";
 
 export default function AddFace({ navigation }: RootTabScreenProps<"TabOne">) {
   const [face, setFace] = useState<string | ArrayBuffer | null>();
   const [name, setName] = useState<string>();
 
-  const imageUrl = "http://192.168.1.120/capture";
-
-  const captureImage = async (setBase64image) => {
-    console.log("#".repeat(70));
-    console.log("Fetching...");
-    const response = await fetch(imageUrl);
-    const imageBlob = await response.blob();
-    const reader = new FileReader();
-    reader.readAsDataURL(imageBlob);
-    let base64image;
-    reader.onloadend = async () => {
-      base64image = reader.result;
-      setBase64image(base64image)
-    };
-  };
-
-  const sendFace =async () => {
-    if (!face){
-      console.warn("Click the box to capture a face")
-      return
+  const sendFace = async () => {
+    if (!face) {
+      console.warn("Click the box to capture a face");
+      return;
     }
     if (!name) {
-      console.warn("Enter the name of the person in the text field")
-      return
+      console.warn("Enter the name of the person in the text field");
+      return;
     }
-    console.log("Saving the new face...")
-    const response = await axios.post(
-      "http://127.0.0.1:5000/api/save-face",
-      {
-        face,name
-      }
-    );
-    console.log("response")
-  }
-
+    console.log("Saving the new face...");
+    const { response, errors } = await saveFaceAPI({ face, name });
+    if (errors) {
+      console.warn(errors);
+      return;
+    }
+    console.warn(response);
+  };
 
   return (
     <View style={styles.container}>
-      <TouchableHighlight style={styles.image} onPress={()=>captureImage(setFace)}>
-        <Image source={{ uri: `${face}` }} style={styles.image} />
+      <TouchableHighlight
+        style={styles.image}
+        onPress={() => captureImage(setFace)}
+      >
+        <Image source={{ uri: String(face) }} style={styles.image} />
       </TouchableHighlight>
       <TextInput
         style={styles.input}
@@ -85,8 +71,8 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: "#4C3575",
     borderWidth: 1,
-    color:"white",
-    borderColor:"white",
+    color: "white",
+    borderColor: "white",
     marginVertical: 30,
     padding: 10,
   },

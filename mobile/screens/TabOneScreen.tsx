@@ -4,7 +4,8 @@ import { Image, StyleSheet, TouchableHighlight } from "react-native";
 import { Text, View } from "../components/Themed";
 import { RootTabScreenProps } from "../types";
 
-import axios from "axios";
+import { recognizeFaceAPI } from "../utils/api";
+import { captureImage } from "../utils/esp32";
 
 export default function RecognizeFaces({
   navigation,
@@ -12,34 +13,22 @@ export default function RecognizeFaces({
   const [img, setImg] = useState<string | ArrayBuffer | null>();
   const [name, setName] = useState("");
 
-  const imageUrl = "http://192.168.1.120/capture";
+  const recognizeFace = async () => {
+    const { response } = await captureImage(setImg);
+    if (!response) {
+      console.warn("Error Fetching the image from ESP32-CAM");
+      return;
+    }
 
-  const capture = async () => {
-    console.log("#".repeat(70));
-    console.log("Fetching...");
-    const response = await fetch(imageUrl);
-    const imageBlob = await response.blob();
-    const reader = new FileReader();
-    reader.readAsDataURL(imageBlob);
-    reader.onloadend = async () => {
-      const base64data = reader.result;
-      setImg(base64data);
-      console.log("Captured an image from ESP32-CAM");
-      const response = await axios.post(
-        "http://127.0.0.1:5000/api/face-recognition",
-        {
-          data: base64data,
-        }
-      );
-      const { faces } = response.data;
-      setName(faces[0]);
-    };
+    const { faces } = await recognizeFaceAPI({ face: img });
+    console.log(faces);
+    setName(faces[0]);
   };
 
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={{ uri: `${img}` }} />
-      <TouchableHighlight style={styles.button} onPress={capture}>
+      <Image style={styles.image} source={{ uri: String(img) }} />
+      <TouchableHighlight style={styles.button} onPress={recognizeFace}>
         <Text style={styles.text}>Work Please!</Text>
       </TouchableHighlight>
       <Text style={styles.text}>{name}</Text>
