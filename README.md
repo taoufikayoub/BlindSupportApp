@@ -93,6 +93,7 @@ Clone the repository and `cd` to the server folder, open your terminal and type 
   ```sh
   git clone https://github.com/taoufikayoub/BlindSupportApp.git
   cd BlindSupportApp
+  cd server
   ```
 
 - Create a virtual environment:
