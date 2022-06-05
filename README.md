@@ -33,7 +33,7 @@
 <h3 align="center">Blind Support Project</h3>
 
   <p align="center">
-    Smart that helps blind people in their daily life using machine learning and a mobile app.
+    Smart glasses that helps blind people in their daily life using machine learning and a mobile app.
     <br />
     <a href="https://github.com/taoufikayoub/BlindSupportApp"><strong>Explore the docs »</strong></a>
     <br />
@@ -76,17 +76,15 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-A Product that helps blind people in their daily life using machine learning, mobile app and ESP32-CAM glasses
+Smart glasses that helps blind people in their daily life using machine learning and a mobile app.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
 - [React Native](https://reactnative.dev/)
-- [EXPO](https://expo.dev/)
-- [FLASK](https://flask.palletsprojects.com/en/2.1.x/)
+- [Expo](https://expo.dev/)
+- [Flask](https://flask.palletsprojects.com/en/2.1.x/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -94,7 +92,7 @@ A Product that helps blind people in their daily life using machine learning, mo
 
 ## Getting Started
 
-This is how you can recreate this project on your local machine.
+This is how you can run this project on your local machine.
 
 ### Prerequisites
 
@@ -145,8 +143,6 @@ Clone the repository and `cd` to the server folder, open your terminal and type 
 
 ## How to Run the mobile App with `Expo`
 
-You need to install Expo on your machine.
-
 Open a new terminal, and type the following commands:
 
 - Enter mobile project folder
@@ -170,9 +166,9 @@ Open a new terminal, and type the following commands:
 
 - Run the app
 
-```sh
- expo install
-```
+  ```sh
+  expo install
+  ```
 
 - Install Expo Go on your android or iOS device to run it there
 
@@ -211,7 +207,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the MIT License.
+Distributed under the Creative Commons Attribution 4.0 International Public License.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
