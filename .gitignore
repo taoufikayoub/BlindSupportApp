@@ -1,7 +1,8 @@
 # Backend
 venv/
 __pycache__/
-
+known-people/
+stranger/
 
 # Frontend
 node_modules/
