@@ -1,27 +1,14 @@
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
+<div align="center">
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<!-- PROJECT LOGO -->
+</div>
+
 <br />
 <div align="center">
   <a href="https://github.com/taoufikayoub/BlindSupportApp">
@@ -44,7 +31,6 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -58,25 +44,19 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#how-to-install-the-ml-server">Server Installation</a></li>
+        <li><a href="#how-to-install-the-mobile-app">Mobile App Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
-
-<!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
 Smart glasses that helps blind people in their daily life using machine learning and a mobile app.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
@@ -85,8 +65,6 @@ Smart glasses that helps blind people in their daily life using machine learning
 - [Flask](https://flask.palletsprojects.com/en/2.1.x/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
 
 ## Getting Started
 
@@ -102,7 +80,9 @@ This is how you can run this project on your local machine.
   npm install expo-cli@latest -g
   ```
 
-## How to Install the ML server and Run it with `Python`
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## How to Install the ML server
 
 You need to install python v3 or a higher version to run this project on your machine.
 
@@ -139,7 +119,9 @@ Clone the repository and `cd` to the server folder, open your terminal and type 
   flask run
   ```
 
-## How to Run the mobile App with `Expo`
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## How to Install the Mobile App
 
 Open a new terminal, and type the following commands:
 
@@ -172,8 +154,6 @@ Open a new terminal, and type the following commands:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
-
 ## Usage
 
 - Wear the smart glasses
@@ -183,8 +163,6 @@ Open a new terminal, and type the following commands:
 - You can add the name of the people to the server to recognize them later
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
 
 ## Contributing
 
